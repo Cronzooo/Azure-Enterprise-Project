@@ -15,3 +15,15 @@
 **Lesson:** This is exactly why infrastructure is scripted. A click-ops approach would have taken hours to redo manually. Scripts made it a 20-minute fix.
 
 **Interview talking point:** Plan for capacity issues. In production, Bicep templates would have fallback size logic.
+
+
+## Windows VM 15-character name limit (Day 2)
+
+**Problem:** Tried to deploy Windows VM with name `vm-mgmt-prod-westeu-001` (22 characters). Got InvalidParameter error: "Windows computer name cannot be more than 15 characters long."
+
+**Why:** Windows enforces a 15-character limit on computer names — a legacy from the 1990s NetBIOS protocol. Linux doesn't have this constraint, which is why the Ubuntu VM with the same naming pattern worked fine.
+
+**Fix:** Added `--computer-name "vm-mgmt-we-01"` (13 chars) to give Windows a short internal hostname while keeping the longer Azure resource name aligned with our naming convention.
+
+**Lesson:** When designing for hybrid (Linux + Windows) cloud environments, the OS imposes its own naming constraints that go beyond what the cloud provider requires. Worth catching at the design stage, not deploy time.
+

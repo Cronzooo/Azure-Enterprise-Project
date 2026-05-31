@@ -2,8 +2,8 @@
 # Create NSGs for the spoke subnets with least-privilege rules
 # Each NSG only allows the traffic actually needed for the workload
 
-RG_NAME="rg-cronzo-prod-eastus"
-LOCATION="eastus"
+RG_NAME="rg-cronzo-prod-westeu"
+LOCATION="westeurope"
 TAGS="Environment=Lab Owner=Lionel-Edoukou Project=Cronzo-Foundation CostCenter=Learning"
 HUB_RANGE="10.0.0.0/16"
 
@@ -32,7 +32,7 @@ az network nsg rule create \
 # Attach NSG to the web subnet
 az network vnet subnet update \
   --resource-group "${RG_NAME}" \
-  --vnet-name "vnet-web-prod-eastus-001" \
+  --vnet-name "vnet-web-prod-westeu-001" \
   --name "snet-web" \
   --network-security-group "nsg-web"
 
@@ -61,7 +61,7 @@ az network nsg rule create \
 # Attach NSG to the mgmt subnet
 az network vnet subnet update \
   --resource-group "${RG_NAME}" \
-  --vnet-name "vnet-mgmt-prod-eastus-001" \
+  --vnet-name "vnet-mgmt-prod-westeu-001" \
   --name "snet-mgmt" \
   --network-security-group "nsg-mgmt"
 

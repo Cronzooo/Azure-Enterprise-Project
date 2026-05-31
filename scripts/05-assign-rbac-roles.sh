@@ -2,7 +2,7 @@
 # Assign RBAC roles to each group at the resource group scope
 # This is where permissions actually get granted
 
-RG_NAME="rg-cronzo-prod-eastus"
+RG_NAME="rg-cronzo-prod-westeu"
 SUBSCRIPTION_ID=$(az account show --query id -o tsv)
 SCOPE="/subscriptions/${SUBSCRIPTION_ID}/resourceGroups/${RG_NAME}"
 

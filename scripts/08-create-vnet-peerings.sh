@@ -2,10 +2,10 @@
 # Create VNet peerings to connect hub to each spoke (both directions)
 # Without peering, the VNets cannot talk to each other
 
-RG_NAME="rg-cronzo-prod-eastus"
-HUB="vnet-hub-prod-eastus-001"
-WEB="vnet-web-prod-eastus-001"
-MGMT="vnet-mgmt-prod-eastus-001"
+RG_NAME="rg-cronzo-prod-westeu"
+HUB="vnet-hub-prod-westeu-001"
+WEB="vnet-web-prod-westeu-001"
+MGMT="vnet-mgmt-prod-westeu-001"
 
 # Peering 1: Hub -> Web spoke
 az network vnet peering create \

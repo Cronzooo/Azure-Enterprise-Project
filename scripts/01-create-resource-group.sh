@@ -3,7 +3,6 @@
 # Usage: bash scripts/01-create-resource-group.sh
 
 az group create \
-  --name rg-cronzo-prod-eastus \
-  --location eastus \
+  --name rg-cronzo-prod-westeu \
+  --location westeurope \
   --tags Environment=Lab Owner="Lionel Edoukou" Project=Cronzo-Foundation CostCenter=Learning
-  
