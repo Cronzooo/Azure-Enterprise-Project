@@ -17,6 +17,7 @@ fi
 echo "Adding Windows VM admin password to Key Vault..."
 
 az keyvault secret set \
+--vault-name "${KV_NAME}" \
  --value "${WINDOWS_VM_PASSWORD}" \
   --name "windows-vm-admin-password" \
   --description "Admin password for vm-mgmt-prod-westeu-001" \
