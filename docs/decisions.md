@@ -27,3 +27,12 @@
 
 **Lesson:** When designing for hybrid (Linux + Windows) cloud environments, the OS imposes its own naming constraints that go beyond what the cloud provider requires. Worth catching at the design stage, not deploy time.
 
+## Day 4: Log Analytics alert rule deferred to portal
+
+**Problem:** Tried creating a scheduled query alert rule with `az monitor scheduled-query create`. The CLI extension's parser fails on KQL queries that contain pipes (`|`), quotes (`"`), and special characters - core to any real KQL query.
+
+**Decision:** Deferred alert rule creation to the portal. In production, most engineers create scheduled query alerts via portal or ARM/Bicep templates rather than CLI - the CLI syntax is fragile.
+
+**Result preserved:** Working KQL queries (`AzureDiagnostics | where ResourceType == "VAULTS"`) and audit data captured via Log Analytics workspace - the underlying observability skill is the value, not the alert wrapper.
+
+**Interview talking point:** "I built a Log Analytics workspace, configured diagnostic settings on Key Vault and Bastion, and queried real audit data with KQL. I can show actual SecretGet, SecretList, and Authentication events I generated, with timestamps, result types, and source IPs."
