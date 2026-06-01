@@ -9,7 +9,9 @@ A complete, production-style Azure cloud environment built CLI-first over a long
 ---
 
 ## Architecture
+![Cronzo Network Architecture](diagrams/Networking%20Diagram.png)
 
+*High-level network topology — hub VNet with two isolated spokes, all VM access through Azure Bastion.*
 Hub-and-spoke topology with workload isolation:HUB VNet (10.0.0.0/16)
     ┌──────────────────────────────────────────┐
     │  AzureBastionSubnet (10.0.1.0/26)        │
@@ -79,6 +81,17 @@ See [docs/decisions.md](docs/decisions.md) for full write-ups. Highlights:
 - **CLI fragility for scheduled query alerts**: `az monitor scheduled-query create` has a fragile parser that fails on standard KQL queries. Deferred alert rule to the portal/Bicep — the KQL queries themselves are the underlying skill.
 
 ---
+
+## Visual evidence
+
+Screenshots captured during the live deployment, before tear down:
+
+| Capture | What it shows |
+|---|---|
+| ![](reports/Defender%20for%20cloud.png) | Microsoft Defender for Cloud Recommendations view for the Cronzo subscription |
+| ![](reports/SC%20KQL%20analytics.png) | KQL query results showing real Key Vault audit events |
+| ![](reports/Sc%20KQL%201.webp) | Log Analytics workspace query - Key Vault SecretGet events |
+| ![](reports/Sc%20KQL%202.webp) | Log Analytics workspace query - additional audit data |
 
 ## Next steps
 
