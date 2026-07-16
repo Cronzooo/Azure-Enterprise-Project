@@ -1,6 +1,6 @@
 # Cronzo Inc — Secure Azure Cloud Foundation
 
-A complete, production-style Azure cloud environment built CLI-first over a long weekend for portfolio . Hub-and-spoke network topology, Azure Bastion for secure VM access, Key Vault with managed identities for secrets, Nessus vulnerability scanning, Log Analytics observability, and infrastructure-as-code via Bicep.
+A complete, production-style Azure cloud environment built CLI-first. Hub-and-spoke network topology, Azure Bastion for secure VM access, Key Vault with managed identities for secrets, Nessus vulnerability scanning, Log Analytics observability, and infrastructure-as-code via Bicep.
 
 **Author:** Lionel Edoukou
 **Region:** West Europe
