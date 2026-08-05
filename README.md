@@ -4,7 +4,7 @@ A complete, production-style Azure cloud environment built CLI-first. Hub-and-sp
 
 **Author:** Lionel Edoukou
 **Region:** West Europe
-**Status:** Resources torn down after lab completion (June 2026)
+
 
 ---
 
